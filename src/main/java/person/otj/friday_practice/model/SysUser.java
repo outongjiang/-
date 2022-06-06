@@ -103,7 +103,7 @@ public class SysUser extends BaseModel {
                 Objects.equals(status, sysUser.status) &&
                 Objects.equals(delFlag, sysUser.delFlag) &&
                 Objects.equals(loginIp, sysUser.loginIp) &&
-                Objects.equals(loginDate, sysUser.loginDate) ;
+                Objects.equals(loginDate, sysUser.loginDate);
 
     }
 
