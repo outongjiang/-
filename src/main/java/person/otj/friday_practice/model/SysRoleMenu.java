@@ -1,35 +1,30 @@
 package person.otj.friday_practice.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 @Table(name = "sys_role_menu", schema = "friday", catalog = "")
 @IdClass(SysRoleMenuPK.class)
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class SysRoleMenu {
-    private Long roleId;
-    private Long menuId;
+
+
 
     @Id
     @Column(name = "role_id")
-    public Long getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(Long roleId) {
-        this.roleId = roleId;
-    }
-
+    private Long roleId;
     @Id
     @Column(name = "menu_id")
-    public Long getMenuId() {
-        return menuId;
-    }
-
-    public void setMenuId(Long menuId) {
-        this.menuId = menuId;
-    }
-
+    private Long menuId;
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

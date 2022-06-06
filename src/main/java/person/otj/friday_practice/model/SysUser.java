@@ -1,210 +1,90 @@
 package person.otj.friday_practice.model;
-
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+import person.otj.friday_practice.baseModel.BaseModel;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Objects;
-
 @Entity
 @Table(name = "sys_user", schema = "friday", catalog = "")
-public class SysUser {
-    private Long userId;
-    private String userName;
-    private String nickName;
-    private String userType;
-    private String email;
-    private String phonenumber;
-    private String sex;
-    private String avatar;
-    private String password;
-    private String status;
-    private String delFlag;
-    private String loginIp;
-    private Timestamp loginDate;
-    private String createBy;
-    private Timestamp createTime;
-    private String updateBy;
-    private Timestamp updateTime;
-    private String remark;
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+public class SysUser extends BaseModel {
 
     @Id
     @Column(name = "user_id")
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
+    private Long userId;
 
     @Basic
     @Column(name = "user_name")
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
+    private String userName;
 
     @Basic
     @Column(name = "nick_name")
-    public String getNickName() {
-        return nickName;
-    }
-
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
-    }
+    private String nickName;
 
     @Basic
     @Column(name = "user_type")
-    public String getUserType() {
-        return userType;
-    }
-
-    public void setUserType(String userType) {
-        this.userType = userType;
-    }
+    private String userType;
 
     @Basic
     @Column(name = "email")
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
+    private String email;
 
     @Basic
     @Column(name = "phonenumber")
-    public String getPhonenumber() {
-        return phonenumber;
-    }
-
-    public void setPhonenumber(String phonenumber) {
-        this.phonenumber = phonenumber;
-    }
+    private String phonenumber;
 
     @Basic
     @Column(name = "sex")
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
+    private String sex;
 
     @Basic
     @Column(name = "avatar")
-    public String getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
-    }
+    private String avatar;
 
     @Basic
     @Column(name = "password")
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
+    private String password;
 
     @Basic
     @Column(name = "status")
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
+    private String status;
 
     @Basic
     @Column(name = "del_flag")
-    public String getDelFlag() {
-        return delFlag;
-    }
-
-    public void setDelFlag(String delFlag) {
-        this.delFlag = delFlag;
-    }
+    private String delFlag;
 
     @Basic
     @Column(name = "login_ip")
-    public String getLoginIp() {
-        return loginIp;
-    }
-
-    public void setLoginIp(String loginIp) {
-        this.loginIp = loginIp;
-    }
+    private String loginIp;
 
     @Basic
     @Column(name = "login_date")
-    public Timestamp getLoginDate() {
-        return loginDate;
-    }
+    private Timestamp loginDate;
 
-    public void setLoginDate(Timestamp loginDate) {
-        this.loginDate = loginDate;
-    }
-
-    @Basic
-    @Column(name = "create_by")
-    public String getCreateBy() {
-        return createBy;
-    }
-
-    public void setCreateBy(String createBy) {
-        this.createBy = createBy;
-    }
-
-    @Basic
-    @Column(name = "create_time")
-    public Timestamp getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Timestamp createTime) {
-        this.createTime = createTime;
-    }
-
-    @Basic
-    @Column(name = "update_by")
-    public String getUpdateBy() {
-        return updateBy;
-    }
-
-    public void setUpdateBy(String updateBy) {
-        this.updateBy = updateBy;
-    }
-
-    @Basic
-    @Column(name = "update_time")
-    public Timestamp getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Timestamp updateTime) {
-        this.updateTime = updateTime;
-    }
-
-    @Basic
-    @Column(name = "remark")
-    public String getRemark() {
-        return remark;
-    }
-
-    public void setRemark(String remark) {
-        this.remark = remark;
-    }
+//    @Basic
+//    @Column(name = "create_by")
+//    private String createBy;
+//
+//    @Basic
+//    @Column(name = "create_time")
+//    private Timestamp createTime;
+//
+//    @Basic
+//    @Column(name = "update_by")
+//    private String updateBy;
+//
+//    @Basic
+//    @Column(name = "update_time")
+//    private Timestamp updateTime;
+//    @Basic
+//    @Column(name = "remark")
+//    private String remark;
 
     @Override
     public boolean equals(Object o) {
@@ -223,16 +103,12 @@ public class SysUser {
                 Objects.equals(status, sysUser.status) &&
                 Objects.equals(delFlag, sysUser.delFlag) &&
                 Objects.equals(loginIp, sysUser.loginIp) &&
-                Objects.equals(loginDate, sysUser.loginDate) &&
-                Objects.equals(createBy, sysUser.createBy) &&
-                Objects.equals(createTime, sysUser.createTime) &&
-                Objects.equals(updateBy, sysUser.updateBy) &&
-                Objects.equals(updateTime, sysUser.updateTime) &&
-                Objects.equals(remark, sysUser.remark);
+                Objects.equals(loginDate, sysUser.loginDate) ;
+
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userId, userName, nickName, userType, email, phonenumber, sex, avatar, password, status, delFlag, loginIp, loginDate, createBy, createTime, updateBy, updateTime, remark);
+        return Objects.hash(userId, userName, nickName, userType, email, phonenumber, sex, avatar, password, status, delFlag, loginIp, loginDate);
     }
 }

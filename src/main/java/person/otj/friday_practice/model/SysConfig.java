@@ -1,38 +1,32 @@
 package person.otj.friday_practice.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
 @Table(name = "sys_config", schema = "friday", catalog = "")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class SysConfig {
-    private Integer configId;
-    private String configName;
-    private String configKey;
-    private String configValue;
-    private String configType;
-    private String createBy;
-    private Timestamp createTime;
-    private String updateBy;
-    private Timestamp updateTime;
-    private String remark;
 
     @Id
     @Column(name = "config_id")
-    public Integer getConfigId() {
-        return configId;
-    }
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer configId;
 
-    public void setConfigId(Integer configId) {
-        this.configId = configId;
-    }
+
 
     @Basic
     @Column(name = "config_name")
-    public String getConfigName() {
-        return configName;
-    }
+    private String configName;
 
     public void setConfigName(String configName) {
         this.configName = configName;
@@ -40,9 +34,7 @@ public class SysConfig {
 
     @Basic
     @Column(name = "config_key")
-    public String getConfigKey() {
-        return configKey;
-    }
+    private String configKey;
 
     public void setConfigKey(String configKey) {
         this.configKey = configKey;
@@ -50,73 +42,32 @@ public class SysConfig {
 
     @Basic
     @Column(name = "config_value")
-    public String getConfigValue() {
-        return configValue;
-    }
-
-    public void setConfigValue(String configValue) {
-        this.configValue = configValue;
-    }
+    private String configValue;
 
     @Basic
     @Column(name = "config_type")
-    public String getConfigType() {
-        return configType;
-    }
-
-    public void setConfigType(String configType) {
-        this.configType = configType;
-    }
+    private String configType;
 
     @Basic
     @Column(name = "create_by")
-    public String getCreateBy() {
-        return createBy;
-    }
-
-    public void setCreateBy(String createBy) {
-        this.createBy = createBy;
-    }
+    private String createBy;
 
     @Basic
     @Column(name = "create_time")
-    public Timestamp getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Timestamp createTime) {
-        this.createTime = createTime;
-    }
+    private Timestamp createTime;
 
     @Basic
     @Column(name = "update_by")
-    public String getUpdateBy() {
-        return updateBy;
-    }
+    private String updateBy;
 
-    public void setUpdateBy(String updateBy) {
-        this.updateBy = updateBy;
-    }
 
     @Basic
     @Column(name = "update_time")
-    public Timestamp getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Timestamp updateTime) {
-        this.updateTime = updateTime;
-    }
+    private Timestamp updateTime;
 
     @Basic
     @Column(name = "remark")
-    public String getRemark() {
-        return remark;
-    }
-
-    public void setRemark(String remark) {
-        this.remark = remark;
-    }
+    private String remark;
 
     @Override
     public boolean equals(Object o) {

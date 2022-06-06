@@ -1,188 +1,86 @@
 package person.otj.friday_practice.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
 @Table(name = "sys_menu", schema = "friday", catalog = "")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class SysMenu {
-    private Long menuId;
-    private String menuName;
-    private Long parentId;
-    private Integer orderNum;
-    private String path;
-    private String component;
-    private Integer isFrame;
-    private String menuType;
-    private String visible;
-    private String perms;
-    private String icon;
-    private String createBy;
-    private Timestamp createTime;
-    private String updateBy;
-    private Timestamp updateTime;
-    private String remark;
 
     @Id
     @Column(name = "menu_id")
-    public Long getMenuId() {
-        return menuId;
-    }
-
-    public void setMenuId(Long menuId) {
-        this.menuId = menuId;
-    }
+    private Long menuId;
 
     @Basic
     @Column(name = "menu_name")
-    public String getMenuName() {
-        return menuName;
-    }
-
-    public void setMenuName(String menuName) {
-        this.menuName = menuName;
-    }
+    private String menuName;
 
     @Basic
     @Column(name = "parent_id")
-    public Long getParentId() {
-        return parentId;
-    }
-
-    public void setParentId(Long parentId) {
-        this.parentId = parentId;
-    }
+    private Long parentId;
 
     @Basic
     @Column(name = "order_num")
-    public Integer getOrderNum() {
-        return orderNum;
-    }
-
-    public void setOrderNum(Integer orderNum) {
-        this.orderNum = orderNum;
-    }
+    private Integer orderNum;
 
     @Basic
     @Column(name = "path")
-    public String getPath() {
-        return path;
-    }
-
-    public void setPath(String path) {
-        this.path = path;
-    }
+    private String path;
 
     @Basic
     @Column(name = "component")
-    public String getComponent() {
-        return component;
-    }
-
-    public void setComponent(String component) {
-        this.component = component;
-    }
+    private String component;
 
     @Basic
     @Column(name = "is_frame")
-    public Integer getIsFrame() {
-        return isFrame;
-    }
-
-    public void setIsFrame(Integer isFrame) {
-        this.isFrame = isFrame;
-    }
+    private Integer isFrame;
 
     @Basic
     @Column(name = "menu_type")
-    public String getMenuType() {
-        return menuType;
-    }
-
-    public void setMenuType(String menuType) {
-        this.menuType = menuType;
-    }
+    private String menuType;
 
     @Basic
     @Column(name = "visible")
-    public String getVisible() {
-        return visible;
-    }
-
-    public void setVisible(String visible) {
-        this.visible = visible;
-    }
+    private String visible;
 
     @Basic
     @Column(name = "perms")
-    public String getPerms() {
-        return perms;
-    }
-
-    public void setPerms(String perms) {
-        this.perms = perms;
-    }
+    private String perms;
 
     @Basic
     @Column(name = "icon")
-    public String getIcon() {
-        return icon;
-    }
-
-    public void setIcon(String icon) {
-        this.icon = icon;
-    }
+    private String icon;
 
     @Basic
     @Column(name = "create_by")
-    public String getCreateBy() {
-        return createBy;
-    }
-
-    public void setCreateBy(String createBy) {
-        this.createBy = createBy;
-    }
+    private String createBy;
 
     @Basic
     @Column(name = "create_time")
-    public Timestamp getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Timestamp createTime) {
-        this.createTime = createTime;
-    }
+    private Timestamp createTime;
 
     @Basic
     @Column(name = "update_by")
-    public String getUpdateBy() {
-        return updateBy;
-    }
-
-    public void setUpdateBy(String updateBy) {
-        this.updateBy = updateBy;
-    }
+    private String updateBy;
 
     @Basic
     @Column(name = "update_time")
-    public Timestamp getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Timestamp updateTime) {
-        this.updateTime = updateTime;
-    }
+    private Timestamp updateTime;
 
     @Basic
     @Column(name = "remark")
-    public String getRemark() {
-        return remark;
-    }
+    private String remark;
 
-    public void setRemark(String remark) {
-        this.remark = remark;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -211,4 +109,7 @@ public class SysMenu {
     public int hashCode() {
         return Objects.hash(menuId, menuName, parentId, orderNum, path, component, isFrame, menuType, visible, perms, icon, createBy, createTime, updateBy, updateTime, remark);
     }
+
+
+
 }

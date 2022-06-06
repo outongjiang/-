@@ -1,34 +1,28 @@
 package person.otj.friday_practice.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
 import javax.persistence.Column;
 import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.Objects;
-
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class SysUserRolePK implements Serializable {
-    private Long userId;
-    private Long roleId;
+
+
 
     @Column(name = "user_id")
     @Id
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
+    private Long userId;
     @Column(name = "role_id")
     @Id
-    public Long getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(Long roleId) {
-        this.roleId = roleId;
-    }
-
+    private Long roleId;
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
